@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Update Movie</title>
+</head>
+<center><body>
+  <div class="card" style="width: 18rem;">
+    <img src="{{movie_poster}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h1 class="card-title"><u>{{movie_name}}</u></h1><br>
+      <footer class="blockquote-footer" style="text-align: left;">
+        Director: <b>{{movie_director}}</b><br></footer>
+      <footer class="blockquote-footer" style="text-align: left;">
+        Year: <b>{{movie_year}}</b><br></footer>
+      <footer class="blockquote-footer" style="text-align: left;">
+        Rating: <b>{{movie_rating}}</b><br></footer>
+      <form action=/users/{{user_id}}/update_movie_rating/{{movie_id}} method="POST">
+        <label for="new_rating">Rate the movie (1-10):</label>
+        <input type="number" id="new_rating" name="new_rating" min="1" max="10" /><br>
+        <button type="submit" value="Update">Update rating</button>
+      </form>
+    </div>
+  </div>
+</body></center>
+  <style>
+    body {
+    background-image: url('https://wallpaper.dog/large/5543597.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Garamond, serif;
+    font-size: 17px;
+        }
+    button {
+    font-family: Garamond, serif;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #f2f2f2;
+    background-color: #26734d;
+    border: none;
+    border-radius: 100px;
+    box-shadow: 0 3px #999;
+    }
+    label {
+        display: block;
+        font:
+        1rem 'Fira Sans',
+        sans-serif;
+        }
+
+    input,
+    label {
+      margin: 0.4rem 0;
+    }
+
+  </style>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>Users</title>
+</head>
+  <body>
+    <div>
+        <h1>Users:</h1>
+        {% for user in users %}
+          <li><a style="text-decoration:none; color:black;" href="/users/{{user.user_id}}">{{user.name}}</a></li><br>
+        {% endfor %}
+    </div>
+  </body><br><br><br>
+    </form>
+      <form action="/add_user">
+         <button type="submit">Add new user</button>
+      </form>
+  <style>
+        body {
+                background-image: url('https://wallpaper.dog/large/5543597.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                font-family: Garamond, serif;
+                font-size:30px;
+                color:black;
+                }
+        button {
+                font-family: Garamond, serif;
+                display: inline-block;
+                padding: 15px 25px;
+                font-size: 24px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+                color: #f2f2f2;
+                background-color: #26734d;
+                border: none;
+                border-radius: 100px;
+                box-shadow: 0 3px #999;
+                }
+
+    </style>
+
+</html>

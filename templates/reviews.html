@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reviews</title>
+</head>
+  <body>
+    <h2>{{movie_name}} reviews:</h2>
+    {% for review in reviews %}
+    <ul>
+      <li>"{{review.review_text[0:35]}}" | User: {{user_name}}
+    </ul>
+    {% endfor %}
+    <form action="/users/{{user_id}}/reviews/{{movie_id}}" method="POST">
+      <p><label for="review">Write your review:</label></p>
+      <textarea id="review" name="review" rows="5" cols="40"></textarea><br><br>
+      <button type="submit">Submit review</button>
+    </form>
+  </body>
+<style>
+    body {
+        background-image: url('https://wallpaper.dog/large/5543597.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        font-family: Garamond, serif;
+        font-size: 19px;
+            }
+    button {
+        font-family: Garamond, serif;
+        display: inline-block;
+        padding: 15px 15px;
+        font-size: 14px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #f2f2f2;
+        background-color: #26734d;
+        border: none;
+        border-radius: 100px;
+        box-shadow: 0 3px #999;
+        }
+</style>
+</html>

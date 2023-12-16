@@ -1,0 +1,81 @@
+<html>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>{{user_name}}</title>
+</head>
+  <body>
+    <h1 style="text-align: center; font-size:6em;">{{user_name}}</h1>
+    {% for movie in movie_lst %}
+      <div class="card mb-3" style="max-width: 540px; background-color: #f2f2f2; border: 11px solid #ccc">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ movie.poster }}" class="img-fluid rounded-start" alt="movie picture">
+          </div>
+          <div class="col-md-8">
+           <div class="card-body">
+             <h4 class="card-title">{{ movie.name }}</h4>
+             Director: {{movie.director}}<br>
+             Rating: {{movie.rating}}<br>
+             Year: {{movie.year}}
+             <p class="fs-6" ><br><br><br>
+             <a href="/users/{{user_id}}/delete_movie/{{movie.movie_id}}" class="card-link" style="margin-bottom: 600px"><u>Delete movie</u></a>
+             <a href="/users/{{user_id}}/update_movie_rating/{{movie.movie_id}}" class="card-link">Update movie</a>
+             <a href="/users/{{user_id}}/reviews/{{movie.movie_id}}" class="card-link">Reviews</a></p>
+           </div>
+          </div>
+      </div>
+     </div>
+    {% endfor %}
+    <div style="margin:10px 10; border-radius: 5px ; background-color: #f2f2f2; width: 60%; border: 1px solid #26734d">
+      <center><form action="/users/{{user_id}}/add_movie" method="POST">
+       <label for="movie_name">Enter the movie you would like to add: </label>
+       <input type="text" id="movie_name" name="movie_name" placeholder="Movie name...">
+       <input type="submit" value="Add">
+      </form></center>
+     </div>
+    <br><a href="/users" style="margin: 8px 0"> - Go back to users page - </a>
+  </body>
+
+
+
+<style>
+    body {
+      background-image: url('https://wallpaper.dog/large/5543597.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      color:black;
+      font-family:'Garamond, serif';
+      }
+
+    a {
+      text-decoration:none;
+      color:black;
+    }
+    input[type=text], select {
+      width: 30%;
+      padding: 12px 20px;
+      margin: 1px 10;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type=submit] {
+      width: 20%;
+      background-color: #26734d;
+      color: white;
+      padding: 14px 20px;
+      margin: 20px 0;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+</style>
+</html>
